@@ -549,6 +549,15 @@ class Ball extends Ellipse2D.Float{
                     super.y -= s;
                 }break;
             case 1:
+                if (s < 0){
+                    if (super.width < super.getCenterX() - s){
+                        super.x -= s;
+                    }
+                } else {
+                    if (WIDTH * SCALER - super.width > super.getCenterX() + s){
+                        super.x += s;
+                    }
+                }
                 if (WIDTH * SCALER - super.width > super.getCenterX() + s){
                     super.x += s;
                 } break;
